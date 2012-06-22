@@ -1,0 +1,135 @@
+body {
+	font-family: "apertura";
+	font-size: 14px;
+}
+#container {
+	width: 800px;
+}
+.group {
+	margin: .5em 0;
+	float: left;
+}
+.pageBreak {
+	page-break-after: always;
+}
+.song {
+	page-break-inside: avoid;
+	page-break-before: auto;
+}
+.song, .device {
+	clear: both;
+	padding: .2em;
+	padding-left: .1em;
+}
+.device {
+	float: left;
+	border: 1px solid black;
+	margin: 0 -1px -1px 0;
+}
+.device {
+	width: 786px;
+	min-height: 88px;
+}
+.device.narrow {
+	width: 390px;
+	float: left;
+	clear: right;
+}
+.song {
+	margin: 1em 0 .5em 0;
+}
+.clearing {
+	clear: both;
+}
+.song .tuning {
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	font-size: 280%;
+	margin-bottom: .4em;
+}
+.song .title {
+	font-weight: bold;
+	font-size: 280%;
+	margin-bottom: .4em;
+	text-transform: uppercase;
+}
+.device span {
+	float: left;
+	font-size: 200%;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: .2em;
+	padding: 0;
+}
+.song .device span {
+	font-size: 150%;
+}
+.set-list {
+	clear: both;
+	float: left;
+}
+.set-list div {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	margin-bottom: .5em;
+	background-repeat: no-repeat;
+}
+.set-list div.text, .set-list div.label {
+	font-size: 130%;
+	font-weight: bold;
+	width: auto;
+	height: auto;
+	width: 50px;
+	text-align: center;
+}
+.set-list div.label {
+	text-align: left;
+	clear: both;
+	width: 110px;
+}
+.song .device span.delayTime {
+	font-size: 190%;
+}
+.set-list div.spacer {
+	width: 50px;
+}
+.set-list .number {
+	padding-top: 12px;
+	height: 38px;
+}
+.set-list .number div {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 150%;
+	font-weight: bold;
+	margin-top: -3px;
+	margin-left: 3px;
+}
+.set-list .number img {
+	position: absolute;
+	margin-top: 0;
+}
+.set-list img {
+	margin-top: -20px;
+}
+.note {
+	font-size: 200%;
+	font-weight: bold;
+	font-style: italic;
+	margin: .7em 0;
+	border: 5px double;
+	padding: .5em;
+	text-align: center;
+	width: 757px;
+	float: left;
+}
+#rig {
+	margin: 0 0 2em 0;
+}
+#fenderBassman {
+	height: 110px;
+	margin-bottom: -1px;
+}

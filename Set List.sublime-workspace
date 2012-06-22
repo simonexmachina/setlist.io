@@ -1,0 +1,482 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"building-ins",
+				"building-install-check"
+			],
+			[
+				"WITH_",
+				"WITH_MONGODB"
+			],
+			[
+				"make",
+				"AAAAB3NzaC1kc3MAAACBAJwM7hAGWz8GLpI9NvLZqTPk4TbEbSxzM70ZNMGOI7WAVD9GFKE"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"selected_items":
+		[
+			[
+				"preference",
+				"Preferences: Settings - Default"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"default",
+				"Preferences: Settings - Default"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"preferences",
+				"Preferences: Settings - Default"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"aligment",
+				"Preferences: Alignment File Settings – User"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – User"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: remov",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/simonwade/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-set-list",
+		"/Users/simonwade/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-set-list",
+		"/Users/simonwade/dev/Projects/Inlink/Repository/inlink-cms/php/inlink/distribution/Syncr.inc",
+		"/Users/simonwade/dev/Projects/Inlink/Repository/update-scripts/2.0/commands.sh",
+		"/Volumes/ea1/home/admin/server-setup/config/usr/local/WowzaMediaServer/conf/auctions/Application.xml",
+		"/Volumes/ea1/home/admin/server-setup/scripts/modules/wowza-server.sh",
+		"/Users/simonwade/dev/Workspace/server-setup/scripts/modules/wowza-server.rb",
+		"/Users/simonwade/dev/Workspace/server-setup/scripts/modules/#!:usr:bin:ruby",
+		"/Users/simonwade/.Trash/Complete360.txt 2",
+		"/Users/simonwade/dev/Projects/GeorgesOnArthurs/Repository/georgesonarthurs/public/include/functions.php",
+		"/Users/simonwade/dev/Projects/GeorgesOnArthurs/Repository/georgesonarthurs/public/admin/agents.php",
+		"/Users/simonwade/dev/Projects/GeorgesOnArthurs/Repository/georgesonarthurs/public/scripts/db-connect.php",
+		"/Volumes/inlink-live-portal/inlinkCms/bin/git-",
+		"/Volumes/inlink-live-portal/inlinkCms/content/update-scripts/2.0/switch-apt-sources.sh",
+		"/Volumes/inlink-live-portal/inlinkCms-git/content/update-scripts/2.0/remove-domxml-from-php5.sh",
+		"/Volumes/inlink-live-portal/inlinkCms/content/update-scripts/2.0/update.sh",
+		"/Volumes/inlink-gateway/buildingServers.php",
+		"/Users/simonwade/dev/Projects/Inlink/Repository/inlink-update-scripts/2.0/switch-apt-sources.sh",
+		"/Volumes/inlink-live-portal/inlinkCms/content/update-scripts/2.0/building-install-check.sh",
+		"/Volumes/inlink-live-portal/inlinkCms/content/update-scripts/2.0/commands.sh",
+		"/Users/simonwade/dev/Projects/Inlink/Repository/inlink-update-scripts/2.0/update.sh",
+		"/Volumes/inlink-live-portal/inlinkCms/content/update-scripts/2.0/building-install.sh",
+		"/Users/simonwade/dev/Projects/Inlink/Repository/buildingInlinkCms/update-sc",
+		"/Users/simonwade/dev/Projects/EA Auctions/Repository/eaauctions/htdocs/v2/apple-touch-icon-144x144-precomposed.png",
+		"/Users/simonwade/dev/Projects/EA Auctions/Repository/eaauctions/htdocs/v2/js/moment.min.js",
+		"/Users/simonwade/dev/Projects/EA Auctions/Repository/eaauctions/htdocs/v2/index.html",
+		"/Users/simonwade/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-set-list",
+		"/Users/simonwade/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/simonwade/dev/Projects/EA Auctions/Repository/eaauctions/.gitignore",
+		"/Volumes/admin1staging1.factorysound.com.au/server-setup/config/opt/nginx/conf/sites-available/staging.factorysound.com.au.conf",
+		"/Volumes/ubuntu.dimension27.com/server-setup/scripts/init.sh",
+		"/Users/simonwade/dev/Workspace/eaauctions/htdocs/v2/index.html",
+		"/Users/simonwade/dev/Workspace/RemoteSystemsTempFiles/LOCALHOST/Users/simonwade/Volumes/ubuntu.dimension27.com/server-setup/scripts/init.sh",
+		"/Users/simonwade/dev/Projects/APlus/Repository/aplus/public/campaigns/first-month-free/index.html",
+		"/Users/simonwade/Downloads/staging.eduadv.com.conf",
+		"/Users/simonwade/dev/Workspace/spree/common_spree_dependencies.rb",
+		"/Volumes/ea1/etc/nginx/sites-available/eaauctions.com.au",
+		"/Volumes/ea1/etc/nginx/sites-available/eaauctions-common",
+		"/Users/simonwade/dev/Workspace/spree/Gemfile",
+		"/Users/simonwade/dev/Workspace/factory-sound/Gemfile",
+		"/Volumes/ea1/etc/nginx/nginx.conf",
+		"/Users/simonwade/dev/Archive/2010/FastFindR/Repository/fastfindr-server/branches/manchester-unity/db/schema.mysql.sql",
+		"/Users/simonwade/dev/Workspace/silverstripe/script/set-permissions.sh",
+		"/Users/simonwade/dev/Workspace/server-setup/puppet/modules/nginx/files/example",
+		"/Users/simonwade/dev/Workspace/server-setup/init.sh",
+		"/Volumes/ea1/home/admin/server-setup/scripts/install-scout-agent.sh",
+		"/Users/simonwade/.ssh/config",
+		"/Volumes/ea1/home/admin/server-setup/puppet/modules/nginx/files/nginx.conf",
+		"/Volumes/ea1/opt/nginx/conf/nginx.conf",
+		"/Volumes/ea1/usr/local/nginx/conf/nginx.conf",
+		"/Users/simonwade/dev/Projects/Factory Sound/Repository/spreefinery/config/database.yml",
+		"/Users/simonwade/dev/Projects/Factory Sound/Repository/spree/Gemfile",
+		"/Users/simonwade/dev/Projects/Factory Sound/Repository/spreefinery/Gemfile",
+		"/Users/simonwade/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-set-list"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/simonwade/dev/Projects/APlus/Repository/aplus/public/themes/site/templates",
+			"/Users/simonwade/dev/Projects/GeorgesOnArthurs/Repository/georgesonarthurs/public/admin",
+			"/Users/simonwade/dev/Projects/GeorgesOnArthurs/Repository/georgesonarthurs/public",
+			"/Users/simonwade/dev/Workspace/server-setup/puppet"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"getCombinedCSSFiles",
+			"contact us",
+			"contact",
+			"ctags",
+			"request",
+			"^((.*?,){3}.*?[^\\\\]),",
+			",([^ ])",
+			",",
+			"\\t",
+			".*\\n(.+?\\t){3}",
+			"\\n",
+			",.*",
+			"\\n",
+			"\\t.*\\n(.+?\\t){3}",
+			"install-c",
+			"releases/master",
+			"/data/eaauctions.com.au/eaauctions",
+			"authent",
+			"Authenticat",
+			"RTMPAuth",
+			"SHELL_GROUP",
+			"SHELL_USER",
+			"REPO_FILE",
+			"RELATIVE",
+			"hi",
+			"HOME_DIR",
+			"THIS_DIR",
+			"_",
+			"end",
+			"'`",
+			"http://www\\.georgesonarthurs\\.com.au",
+			"header.*georgesonarthurs.com.au",
+			"Location:.*georgesonarthurs.com.au",
+			"georgesonarthurs.com.au",
+			"admin_email",
+			"CONFIG",
+			"ll",
+			"php",
+			"		",
+			"'",
+			"place",
+			"^5.0",
+			"<<<<<<< ",
+			"rsync",
+			"rm ",
+			"rsa",
+			"mv ",
+			"rm ",
+			"-q",
+			"-check",
+			"		&& ",
+			"-q",
+			"=",
+			"				",
+			"		(",
+			"	",
+			"bootstrap",
+			"templateName",
+			"		",
+			"bid-on",
+			"Current",
+			"		",
+			" {",
+			"debugger",
+			"window",
+			"\\$DIR",
+			"$DIR",
+			"$HOSTNAME",
+			"rvm ",
+			"rvm use",
+			"Rails",
+			"includeBid",
+			"    # ",
+			"nginx-status",
+			"SHELL_USER",
+			" \"\"",
+			"newgrp",
+			"ruby",
+			"gem",
+			"\"",
+			"cosmetrix",
+			"#	modified:   ",
+			"sock",
+			"LocalFo",
+			"eaauctions",
+			"ArticlesForSend",
+			"Position",
+			"TopArticle",
+			"HasTop",
+			"0",
+			"require_once",
+			"controlIPs",
+			"You do not have permission to view this page.",
+			"@@DB_HOSTNAME@@",
+			"@@DB_USERNAME@@",
+			"@@DB_NAME@@",
+			"^    ",
+			"		",
+			"\\n\\? +",
+			"}",
+			"\\n\\? +",
+			"}",
+			"tenants",
+			"imageUri",
+			"usermod",
+			"FTP",
+			"/opt/mysql/bin",
+			"/etc/puppet",
+			"/etc/puppet/modules/nginx/files/nginx",
+			"apt-get ins",
+			"/etc/hosts",
+			"WITH_PHP",
+			"Install",
+			"WITH_NGINX_GZIP_STATIC",
+			"FONTS",
+			"1",
+			"FONTS",
+			"  ",
+			"$WITH",
+			"RVM",
+			"WITH_",
+			"    ",
+			"upstream",
+			"^# ",
+			"eduadv",
+			"/data/eaauctions",
+			"default",
+			"include php_fastcgi"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"$1\\\\,",
+			"$1\\,",
+			", $1",
+			"\\t"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"page.php",
+				"public/mysite/code/Page.php"
+			],
+			[
+				"page.ss",
+				"public/themes/site/templates/Page.ss"
+			],
+			[
+				"theme-form",
+				"public/themes/site/css/theme-form.css"
+			],
+			[
+				"theme-for",
+				"public/themes/site/css/theme-form.css"
+			],
+			[
+				"theme.",
+				"public/themes/site/css/theme.css"
+			],
+			[
+				"udfo",
+				"public/userforms/code/UserDefinedForm.php"
+			],
+			[
+				"theme.css",
+				"public/themes/site/css/theme.css"
+			],
+			[
+				"commands",
+				"update-scripts/2.0/commands.sh"
+			],
+			[
+				"syncr",
+				"inlink-cms/php/inlink/distribution/Syncr.inc"
+			],
+			[
+				"edit_customer",
+				"public/admin/edit_customer.php"
+			],
+			[
+				"db-conne",
+				"public/scripts/db-connect.php"
+			],
+			[
+				"comm",
+				"2.0/commands.sh"
+			],
+			[
+				"upda",
+				"2.0/update.sh"
+			],
+			[
+				"buil",
+				"2.0/building-install-check.sh"
+			],
+			[
+				"style.cs",
+				"css/style.css"
+			],
+			[
+				"my-eaa",
+				"css/my-eaa.css"
+			],
+			[
+				"server",
+				"server.php"
+			],
+			[
+				"item-li",
+				"css/item-listing.css"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"eaa",
+				"css/my-eaa.css"
+			],
+			[
+				"ea",
+				"css/my-eaa.css"
+			],
+			[
+				"install",
+				"scripts/install-scout-agent.sh"
+			],
+			[
+				"660",
+				"660-init-deb.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"inli",
+				"/Users/simonwade/dev/Projects/Inlink/Repository/inlink-cms/inlink-cms.sublime-project"
+			],
+			[
+				"",
+				"/Users/simonwade/dev/Projects/Inlink/Repository/inlink-cms/inlink-cms.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true
+}
