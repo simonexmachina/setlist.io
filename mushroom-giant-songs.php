@@ -19,10 +19,10 @@ $gigSheet->addSong('graven', 'Graven Image', 'D', array(
 //$gigSheet->addSong('jazz', 'Jazz Bullet', 'D', array(
 //		'DD-20 Delay' => '250ms,12,9,1.5,12'
 //));
-//$gigSheet->addSong('untitled', 'Untitled', 'E/D', array(
-//		'DD-20 Delay (intro)' => '250ms,2,2,12,12',
-//		'DD-20 Delay (solo)' => '235ms,2,2,12,12'
-//));
+$gigSheet->addSong('untitled', 'Untitled', 'E/D', array(
+		'DD-20 Delay (intro)' => '250ms,2,2,12,12',
+		'DD-20 Delay (solo)' => '235ms,2,2,12,12'
+));
 $gigSheet->addSong('pigeons', 'Pigeons', 'D', array(
 		'DD-20 Delay' => '625ms,2.5,10.5,12,12', 
 		'Nord Electro' => 'A7',
@@ -77,17 +77,21 @@ $gigSheet->addSong('drake', 'The Drake Equation', 'D', array(
 //		'DD-20 Delay' => '450ms,1.5,12,1.5,10',
 //));
 $gigSheet->addSong('ignorance', 'Ignorance is Bliss', 'D', array(
-		'DD-20 Delay' => '550ms,1.5,12,1.5,10',
+		'DD-20 Delay' => '550ms,10.5,12,1.5,12',
+		'DD-20 Delay' => '500ms,1.5,10.5,1.5,11',
+		'DD-20 Delay' => '570ms,3,9,1.5,11',
+		'DD-20 Delay' => '460ms,1.5,10.5,1.5,11',
 ));
 
 $gigSheet->addSong('bones', 'Bones in the Attic', false);
 $gigSheet->addSong('travesty', 'Travesty', 'E', array(
 		'DD-20' => '140ms,1,3,3,11'
 ));
-$gigSheet->addSong('coma', 'Coma', 'D', array(
-		'Rat' => '10.5,12,11',
-		'DD-20' => '560ms,1.5,12,10.5,11',
-		'DD-20 (Part II)' => '600ms,3,3,1.5,10'
+$gigSheet->addSong('spheres', 'Spheres', 'D', array(
+		'Rat' => '10,1,1.5',
+		'DD-20' => '560ms,1.5,12,12,11',
+		'DD-20 (Coma)' => '600ms,3,3,1.5,10',
+		'Clyde' => 'Jimi',
 ));
 /*
 $gigSheet->addSong('reach', 'Reach', 'E', array(

@@ -1,27 +1,32 @@
 <?php
-echo 'hi'.NL;
-include('set-list.php');
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+
+include('gig-sheet.php');
 
 $gigSheet = new GigSheet();
+//* dev */ GigSheet::generateDegrees();
+
 include('mushroom-giant-songs.php');
 
 $songs = array(
-	'graven',
-	'woman',
-	'poorTom',
-	'drake',
-	'coma',
-	false,
 	'400',
-	'shadows',
+	'drake',
+	'woman',
+	'spheres',
+	'poorTom',
 	'scars',
 	'aesong',
+	'untitled',
+
 	'ignorance',
 	'galapagos',
-
-	'travesty',
-	'majesticBlackness',
 	'theAbyss',
+	'majesticBlackness',
+
+	'graven',
+	'shadows',
+	'travesty',
 	'autumn',
 	'pigeons',
 	'ironTang',
@@ -34,7 +39,7 @@ $songs = array(
 
 );
 
-echo printHeader('mushroom-giant.css');
+echo printHeader('mushroom-giant.css', '');
 foreach( $songs as $identifier ) {
 	if( $identifier and !$gigSheet->hasSong($identifier) ) {
 		echo "Couldn't find song for identifier '$identifier'".NL;
