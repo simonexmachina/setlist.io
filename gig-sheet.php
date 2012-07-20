@@ -1,11 +1,22 @@
 <?php
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+
 define('NL', "<br/>\n");
 
 class GigSheet {
 
+	/**
+	 * @var GigSheetConfig $config
+	 */
+	public $config;
+
+	function __construct() {
+		$this->config = new GigSheetConfig();
+	}
 	function printRig() {
 		return;
-		echo "<div id=\"rig\" class=\"group\">\n";
+		echo "<div id='rig' class='group'>\n";
 		echo $this->getDevice('Fender Bassman', '5,7.5,4,,8,7,5,4.5,,8', true, false, true);
 		echo $this->getDevice('Rat', 'Switch right,10.5,10.5,12');
 		echo $this->getDevice('OD-3', '10.5,1.5,12');
@@ -16,23 +27,23 @@ class GigSheet {
 		echo "</div>\n";
 	}
 
-	function getDevice( $name, $set-list, $clearing = true, $spacer = true, $numbers = false ) {
-		if( !is_array($set-list) ) {
-			$set-list = explode(',', $set-list);
+	function getDevice( $name, $settings, $clearing = true, $spacer = true, $numbers = false ) {
+		if( !is_array($settings) ) {
+			$settings = explode(',', $settings);
 		}
 		$id = string_toCamelCase($name);
-		$rv = "\t<div id=\"$id\" class=\"device";
-		$numSettings = sizeof($set-list);
-		if( !is_numeric($set-list[0]) ) {
+		$rv = "\t<div id='$id' class='device";
+		$numSettings = sizeof($settings);
+		if( !is_numeric($settings[0]) ) {
 			$numSettings--;
 		}
 		if( $numSettings <= 4 ) {
 			$rv .= " narrow";
 		}
-		$rv .= "\"><span>".htmlentities($name)."</span>\n"
-				."\t\t<div class=\"set-list\">\n";
+		$rv .= "'><div class='label'>".htmlentities($name)."</div>\n"
+				."\t\t<div class='settings'>\n";
 		$first = true;
-		foreach( $set-list as $setting ) {
+		foreach( $settings as $setting ) {
 			$content = '&nbsp;';
 			$class = false;
 			if( is_numeric($setting) or ($setting == 'off') ) {
@@ -44,25 +55,31 @@ class GigSheet {
 				else {
 					$image = "$setting.bmp";
 				}
-				$content .= "<img src=\"images/$image\" />";
+				$class .= 'dial';
+				// $content .= "<img src='images/$image' />";
 				if( $numbers ) {
-					$content .= "<div>$number</div>";
+					$content .= "<div class='number'>$number</div>";
+					$class = '';
+				}
+				else {
+					$oclock = str_pad($setting * 10, 3, '0', STR_PAD_LEFT);
+					$content = "<div class='oclock-$oclock'><span></span></div>";
 				}
 			}
 			else if( $setting ) {
 				$class = ($first ? 'label' : 'text');
 				$content = $setting;
-				$content = preg_replace('/([0-9]+ms)/', '<span class="delayTime">\1</span>', $content);
+				$content = preg_replace('/([0-9]+ms)/', '<span class="label">\1</span>', $content);
 				$first = false;
 			}
 			else {
 				$class = 'spacer';
 			}
-			if( $first and $spacer ) {
-				$rv .= "\t\t<div class=\"label\">&nbsp;</div>\n";
+			if( $first and $spacer and $this->config->addLabelSpacer ) {
+				$rv .= "\t\t<div class='label'>&nbsp;</div>\n";
 				$first = false;
 			}
-			$rv .= "\t\t<div".($class ? " class=\"$class\"" : '').">$content</div>\n";
+			$rv .= "\t\t<div".($class ? " class='$class'" : '').">$content</div>\n";
 		}
 		$rv .= "\t\t</div>\n"
 				."\t</div>\n";
@@ -88,6 +105,7 @@ class GigSheet {
 		if( !is_array($identifiers) ) {
 			$identifiers = explode("\n", trim($identifiers));
 		}
+		$markup = '';
 		foreach( $identifiers as $identifier ) {
 			if( preg_match('/ *- *(.*)/', $identifier, $matches) ) {
 				$markup .= $this->getNote($matches[1]);
@@ -100,7 +118,7 @@ class GigSheet {
 	}
 
 	function getNote( $note ) {
-		return "<div class=\"note\">$note</div>\n";
+		return "<div class='note'>$note</div>\n";
 	}
 
 	function getSong( $identifier ) {
@@ -132,16 +150,16 @@ class GigSheet {
 				$rv .= $this->getNote($note);
 			}
 		}
-		$rv .= "<div id=\"$id\" class=\"song\">\n"
-				."\t<span class=\"tuning\">$tuning</span>\n"
-				."\t<div class=\"title\">$title</div>\n";
-		foreach( $devices as $device => $set-list ) {
+		$rv .= "<div id='$id' class='song'>\n"
+				."\t<span class='tuning'>$tuning</span>\n"
+				."\t<div class='title'>$title</div>\n";
+		foreach( $devices as $device => $settings ) {
 			if( $device === 0 or $device === 1 ) {
 				continue;
 			}
-			$rv .= $this->getDevice($device, $set-list, false);
+			$rv .= $this->getDevice($device, $settings, false);
 		}
-		$rv .= "\t<div class=\"clearing\"></div>\n"
+		$rv .= "\t<div class='clearing'></div>\n"
 				."</div>\n\n";
 		if( isset($devices[1]) ) {
 			if( !is_array($devices[1]) ) {
@@ -161,8 +179,34 @@ class GigSheet {
 	}
 
 	function getPageBreak() {
-		return "<div class=\"pageBreak\">&nbsp;</div>\n";
+		return "<div class='pageBreak'>&nbsp;</div>\n";
 	}
+
+	static function generateDegrees() {
+		$deg = 0;
+		for( $i = 0; $i < 12; $i += .5 ) {
+			$oclock = str_pad($i * 10, 3, 0, STR_PAD_LEFT);
+			if( $oclock == 0 ) {
+				$oclock = 120;
+			}
+			$deg = $i * 2 * 15;
+			echo <<<EOB
+.dial div.oclock-$oclock {
+	-webkit-transform: rotate({$deg}deg);
+	-moz-transform:rotate({$deg}deg);
+	-o-transform:rotate({$deg}deg);
+	-ms-transform:rotate({$deg}deg);
+}
+
+EOB;
+		}
+	}
+
+}
+
+class GigSheetConfig {
+
+	public $addLabelSpacer = true;
 
 }
 
@@ -188,20 +232,41 @@ function printHeader( $cssFile = false, $title = 'Set List' ) {
 <!--[if !IE]>-->   <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://use.typekit.com/ryn4tie.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<link rel="stylesheet" href="set-list.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="set-list-screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="set-list-print.css" type="text/css" media="print" />
 <?= ($cssFile ? '<link rel="stylesheet" href="'.$cssFile.'" type="text/css" media="all" />' : '') ?>
-	<title>$title</title>
+	<title><?= $title ?></title>
 </head>
 <body>
-<div id="container">
+<div id="color-scheme" class="dark">
+<div id="theme" class="hotel-solid">
+	<div id="container">
+		<div id="controls">
+			<label for="theme-select">Theme:</label>
+			<select id="theme-select">
+				<option value="helvetica" checked>Helvetica</option>
+				<option value="futura">Futura</option>
+				<option value="orbitron">Orbitron</option>
+				<option value="lithos-pro">Lithos Pro</option>
+				<option value="hotel-solid">Hotel Solid</option>
+				<option value="mostra-nuova-alt-c">Mostra Nuova Alt C</option>
+			</select>
+		</div>
 <?php
+	if( $title ) {
+		echo "<h1>$title</h1>\n";
+	}
 }
 
 function printFooter() {
 	?>
+	</div>
+</div>
 </div>
 </body>
 </html>

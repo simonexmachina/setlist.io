@@ -1,9 +1,37 @@
 body {
-	font-family: "apertura";
 	font-size: 14px;
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+
+h1 {
+	font-size: 300%;
+	margin-top: 0.1em;
+	text-transform: uppercase
+}
+
+#controls {
+	font-family: 'orbitron';
+	margin: 0 0px 20px 0;
+	border: 3px solid #999;
+	padding: 10px;
+	width: auto;
+	float: right;
+	-moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px;
+	padding-top: 20px;
+	margin-top: -36px;
+}
+
+#color-scheme {
+	float: left;
+	width: 100%;
 }
 #container {
-	width: 800px;
+	clear: both;
+	padding: 20px;
+	max-width: 770px;
+	margin: 0 auto 50px auto;
 }
 .group {
 	margin: .5em 0;
@@ -16,27 +44,20 @@ body {
 	page-break-inside: avoid;
 	page-break-before: auto;
 }
-.song, .device {
-	clear: both;
-	padding: .2em;
-	padding-left: .1em;
-}
 .device {
 	float: left;
 	border: 1px solid black;
 	margin: 0 -1px -1px 0;
-}
-.device {
-	width: 786px;
-	min-height: 88px;
+	width: 750px;
+	min-height: 90px;
+	padding: 10px 4px 10px 12px;
 }
 .device.narrow {
-	width: 390px;
-	float: left;
+	width: 318px;
 	clear: right;
 }
 .song {
-	margin: 1em 0 .5em 0;
+	margin: 0 0 20px;
 }
 .clearing {
 	clear: both;
@@ -46,38 +67,37 @@ body {
 	width: 100px;
 	font-weight: bold;
 	font-size: 280%;
-	margin-bottom: .4em;
 }
 .song .title {
 	font-weight: bold;
 	font-size: 280%;
-	margin-bottom: .4em;
+	margin-bottom: 5px;
 	text-transform: uppercase;
 }
-.device span {
+.device .label {
 	float: left;
 	font-size: 200%;
 	font-weight: bold;
 	margin: 0;
-	margin-bottom: .2em;
+	margin-bottom: 8px;
 	padding: 0;
 }
-.song .device span {
+.song .device .label {
 	font-size: 150%;
 }
-.set-list {
+.settings {
 	clear: both;
 	float: left;
 }
-.set-list div {
+.settings div {
 	float: left;
 	width: 50px;
 	height: 50px;
 	margin-right: 10px;
-	margin-bottom: .5em;
 	background-repeat: no-repeat;
 }
-.set-list div.text, .set-list div.label {
+.settings div.text,
+.settings div.label {
 	font-size: 130%;
 	font-weight: bold;
 	width: auto;
@@ -85,22 +105,22 @@ body {
 	width: 50px;
 	text-align: center;
 }
-.set-list div.label {
+.settings div.label {
 	text-align: left;
 	clear: both;
-	width: 110px;
+	width: 80px;
 }
-.song .device span.delayTime {
-	font-size: 190%;
+.song .device span.label {
+	font-size: 100%;
 }
-.set-list div.spacer {
+.settings div.spacer {
 	width: 50px;
 }
-.set-list .number {
+.settings .number {
 	padding-top: 12px;
 	height: 38px;
 }
-.set-list .number div {
+.settings .number div {
 	text-align: center;
 	vertical-align: middle;
 	font-size: 150%;
@@ -108,11 +128,11 @@ body {
 	margin-top: -3px;
 	margin-left: 3px;
 }
-.set-list .number img {
+.settings .number img {
 	position: absolute;
 	margin-top: 0;
 }
-.set-list img {
+.settings img {
 	margin-top: -20px;
 }
 .note {
@@ -132,4 +152,198 @@ body {
 #fenderBassman {
 	height: 110px;
 	margin-bottom: -1px;
+}
+.settings .dial {
+	border: 3px solid;
+	border-radius: 100%;
+	width: 43px;
+	height: 43px;
+}
+.settings .dial div {
+	width: 100%;
+	height: 100%;
+}
+.settings .dial div span {
+	display: block;
+	border: 2px solid;
+	height: 41%;
+	margin: 0 0 0 20px;
+	width: 0px;
+	float: left;
+}
+.dial div.oclock-120 {
+	-webkit-transform: rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
+	-ms-transform:rotate(0deg);
+}
+.dial div.oclock-005 {
+	-webkit-transform: rotate(15deg);
+	-moz-transform:rotate(15deg);
+	-o-transform:rotate(15deg);
+	-ms-transform:rotate(15deg);
+}
+.dial div.oclock-010 {
+	-webkit-transform: rotate(30deg);
+	-moz-transform:rotate(30deg);
+	-o-transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+}
+.dial div.oclock-015 {
+	-webkit-transform: rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+}
+.dial div.oclock-020 {
+	-webkit-transform: rotate(60deg);
+	-moz-transform:rotate(60deg);
+	-o-transform:rotate(60deg);
+	-ms-transform:rotate(60deg);
+}
+.dial div.oclock-025 {
+	-webkit-transform: rotate(75deg);
+	-moz-transform:rotate(75deg);
+	-o-transform:rotate(75deg);
+	-ms-transform:rotate(75deg);
+}
+.dial div.oclock-030 {
+	-webkit-transform: rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+}
+.dial div.oclock-035 {
+	-webkit-transform: rotate(105deg);
+	-moz-transform:rotate(105deg);
+	-o-transform:rotate(105deg);
+	-ms-transform:rotate(105deg);
+}
+.dial div.oclock-040 {
+	-webkit-transform: rotate(120deg);
+	-moz-transform:rotate(120deg);
+	-o-transform:rotate(120deg);
+	-ms-transform:rotate(120deg);
+}
+.dial div.oclock-045 {
+	-webkit-transform: rotate(135deg);
+	-moz-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	-ms-transform:rotate(135deg);
+}
+.dial div.oclock-050 {
+	-webkit-transform: rotate(150deg);
+	-moz-transform:rotate(150deg);
+	-o-transform:rotate(150deg);
+	-ms-transform:rotate(150deg);
+}
+.dial div.oclock-055 {
+	-webkit-transform: rotate(165deg);
+	-moz-transform:rotate(165deg);
+	-o-transform:rotate(165deg);
+	-ms-transform:rotate(165deg);
+}
+.dial div.oclock-060 {
+	-webkit-transform: rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+}
+.dial div.oclock-065 {
+	-webkit-transform: rotate(195deg);
+	-moz-transform:rotate(195deg);
+	-o-transform:rotate(195deg);
+	-ms-transform:rotate(195deg);
+}
+.dial div.oclock-070 {
+	-webkit-transform: rotate(210deg);
+	-moz-transform:rotate(210deg);
+	-o-transform:rotate(210deg);
+	-ms-transform:rotate(210deg);
+}
+.dial div.oclock-075 {
+	-webkit-transform: rotate(225deg);
+	-moz-transform:rotate(225deg);
+	-o-transform:rotate(225deg);
+	-ms-transform:rotate(225deg);
+}
+.dial div.oclock-080 {
+	-webkit-transform: rotate(240deg);
+	-moz-transform:rotate(240deg);
+	-o-transform:rotate(240deg);
+	-ms-transform:rotate(240deg);
+}
+.dial div.oclock-085 {
+	-webkit-transform: rotate(255deg);
+	-moz-transform:rotate(255deg);
+	-o-transform:rotate(255deg);
+	-ms-transform:rotate(255deg);
+}
+.dial div.oclock-090 {
+	-webkit-transform: rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+	-ms-transform:rotate(270deg);
+}
+.dial div.oclock-095 {
+	-webkit-transform: rotate(285deg);
+	-moz-transform:rotate(285deg);
+	-o-transform:rotate(285deg);
+	-ms-transform:rotate(285deg);
+}
+.dial div.oclock-100 {
+	-webkit-transform: rotate(300deg);
+	-moz-transform:rotate(300deg);
+	-o-transform:rotate(300deg);
+	-ms-transform:rotate(300deg);
+}
+.dial div.oclock-105 {
+	-webkit-transform: rotate(315deg);
+	-moz-transform:rotate(315deg);
+	-o-transform:rotate(315deg);
+	-ms-transform:rotate(315deg);
+}
+.dial div.oclock-110 {
+	-webkit-transform: rotate(330deg);
+	-moz-transform:rotate(330deg);
+	-o-transform:rotate(330deg);
+	-ms-transform:rotate(330deg);
+}
+.dial div.oclock-115 {
+	-webkit-transform: rotate(345deg);
+	-moz-transform:rotate(345deg);
+	-o-transform:rotate(345deg);
+	-ms-transform:rotate(345deg);
+}
+
+#theme .device {
+	border: 2px solid;
+	margin: 0 -2px -2px 0;
+}
+
+#theme.orbitron {
+	font-family: 'orbitron';
+}
+#theme.orbitron .song .device .settings .label,
+#theme.orbitron .song .device span.label {
+	font-size: 120%;
+	font-weight: bold;
+}
+#theme.futura {
+	font-family: 'futura';
+}
+#theme.futura #container {
+	margin-top: -10px;
+}
+#theme.lithos-pro {
+	font-family: 'lithos-pro';
+}
+#theme.hotel-solid {
+	font-family: 'hotel-solid';
+}
+#theme.mostra-nuova-alt-c {
+	font-family: 'mostra-nuova-alt-c';
+}
+#theme.helvetica {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
 }
