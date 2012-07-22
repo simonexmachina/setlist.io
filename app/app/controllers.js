@@ -42,7 +42,6 @@ function( $scope, $http, utils ) {
       return utils.slugify(device.name);
     }
   };
-  $http.get()
   $scope.songs = [
     new Song({
       title: 'Spheres', tuning: 'D', devices: [

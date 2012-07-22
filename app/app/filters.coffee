@@ -1,0 +1,7 @@
+# Filters
+
+angular.module('setList.filters', []).
+  filter('interpolate', ['version', (version) ->
+    (text) ->
+      String(text).replace(/\%VERSION\%/mg, version)
+  ])

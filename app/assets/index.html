@@ -1,0 +1,58 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class='ie ie6 lt-ie9' lang='en'> <![endif]-->
+<!--[if IE 7 ]>    <html class='ie ie7 lt-ie9' lang='en'> <![endif]-->
+<!--[if IE 8 ]>    <html class='ie ie8 lt-ie9' lang='en'> <![endif]-->
+<!--[if gt IE 8]>  <html class='ie gte-ie9' lang='en'> <![endif]-->
+<!--[if !IE]>-->   <html lang='en'> <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <title>SetList.io</title>
+  <link rel='stylesheet' href='css/app.css'/>
+</head>
+<body>
+  <div id='color-scheme' class='dark'><div id='theme' class='{{selectedTheme}}'>
+    <div id='container'>
+      <div id='controls'
+          ng-controller='ThemeCtrl'>
+        <label for='theme-select'>Theme:</label>
+        <select id='theme-select'
+            ng-model='selectedTheme'>
+          <option value='{{theme.id}}'
+              ng-repeat='theme in themes'
+              ng-selected='theme.id == selectedTheme'>{{theme.name}}</option>
+        </select>
+      </div>
+      <div class='set-list'
+          ng-controller='SetListCtrl'>
+        <ol class='songs unstyled'
+            ng-repeat='song in songs'>
+          <div id='{{id}}' class='song'
+              ng-controller='SongCtrl'>
+            <span class='tuning'>{{song.tuning}}</span>
+            <div class='title'>{{song.title}}</div>
+            <ol class='devices unstyled'>
+              <li id='{{device.id}}' class='device xng-bind:song.isNarrow(device)'
+                  ng-repeat='device in song.devices'
+                  ng-controller='DeviceCtrl'>
+                <div class='name'>{{device.name}}</div>
+                <div class='settings'>
+                  <div class='label'><span class='label'>{{device.settingsLabel}}</span></div>
+                  <ol class='unstyled'>
+                    <li class='dial'
+                        ng-repeat='setting in device.settings'
+                        ng-controller='DialCtrl'>
+                      <div class='{{setting}}'><span></span></div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+<script src='/js/vendor.js'></script>
+<script src='/js/app.js'></script>
+</body>
+</html>
