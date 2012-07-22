@@ -1,5 +1,6 @@
 # Declare app level module which depends on filters, and services
 App = angular.module('setList', [
+  'setList.models',
   'setList.controllers',
   'setList.filters',
   'setList.services',

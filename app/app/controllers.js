@@ -4,10 +4,12 @@
 
 var mod = {}
 
-mod.ThemeCtrl = [
+/**
+ * Controller for the Settings panel. Handles changing the theme.
+ */
+mod.SettingsCtrl = [
 '$scope', '$rootScope', 'config',
 function( $scope, $rootScope, config ) {
-  $scope.selectedTheme = config.theme;
   $scope.themes = [
     {id: 'helvetica', name: 'Helvetica'},
     {id: 'futura', name: 'Futura'},
@@ -16,47 +18,58 @@ function( $scope, $rootScope, config ) {
     {id: 'hotel-solid', name: 'Hotel Solid'},
     {id: 'mostra-nuova-alt-c', name: 'Mostra Nuova Alt C'}
   ];
+  // store the selected theme in the scope
+  $scope.selectedTheme = config.theme;
+  // watch this model and update the rootScope, so we can
+  // can bind to it outside of this scope
   $scope.$watch('selectedTheme', function(theme) {
     $rootScope.selectedTheme = theme;
+    // and update the 'config' service
     config.theme = theme;
   });
 }];
-// mod.ThemeCtrl.$inject = [];
 
+/**
+ * Controller for the list of Songs
+ */
 mod.SetListCtrl = [
-'$scope', '$http', 'utils',
-function( $scope, $http, utils ) {
-  function Song(settings) {
-    this.title = settings.title;
-    this.tuning = settings.tuning;
-    this.devices = settings.devices;
-  };
-  Song.prototype = {
-    id: function() {
-      return this.title.replace(/[^a-z0-9]+/g, '-').replace(/-{2,}/, '-');
-    },
-    getNarrowClass: function(device) {
-      return device.settings.length <= 4 ? 'narrow' : '';
-    },
-    getDeviceId: function(device) {
-      return utils.slugify(device.name);
-    }
-  };
-  $scope.songs = [
-    new Song({
-      title: 'Spheres', tuning: 'D', devices: [
-        { name: 'DD-20', settingsLabel: '550ms', settings: [12, 1.5, 10.5, 11] }
-      ]
-    })
-  ];
+'$scope', '$http', 'models', 'utils',
+function( $scope, $http, models, utils ) {
+  $scope.songs = [];
+  $http.get('/test-data.json')
+    .success(function(data, status, headers, config) {
+      angular.forEach(data.songs, function(value) {
+        $scope.songs.push(new models.Song(value));
+      });
+    });
 }];
 
+/**
+ * Controller for a Song
+ */
 mod.SongCtrl = [
 '$scope',
 function( $scope ) {}
 ];
 
-mod.DeviceCtrl = [function() {}];
-mod.DialCtrl = [function() {}];
+/**
+ * Controller for a Device
+ */
+mod.DeviceCtrl = [
+'$scope', 'utils',
+function( $scope, utils ) {
+  $scope.getClasses = function(device) {
+    return utils.slugify(device.name)
+        + (device.settings.length <= 4 ? ' narrow' : '');
+  };
+}];
+
+/**
+ * Controller for a Dial
+ */
+mod.DialCtrl = [
+'$scope',
+function( $scope ) {}
+];
 
 angular.module('setList.controllers', []).controller(mod)

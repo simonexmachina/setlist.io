@@ -10,3 +10,4 @@ build.xml
 _public
 node_modules/*
 npm-debug.log
+tmp

@@ -1,0 +1,14 @@
+{
+	"songs": [
+		{
+			"title": "Spheres",
+			"tuning": "D",
+			"devices": [
+				{ "name": "Rat", "settings": [10.5,1,1.5] },
+				{ "name": "DD-20", "text": "560ms", "settings": [1.5,12,12,11] },
+				{ "name": "DD-20 (Coma)", "text": "600ms", "settings": [3,3,1.5,10] },
+				{ "name": "Clyde Wah", "text": "Jimi" }
+			]
+		}
+	]
+}

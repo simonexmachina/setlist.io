@@ -59,8 +59,9 @@ h1 {
 	float: left;
 	border: 1px solid black;
 	margin: 0 -1px -1px 0;
-	width: 750px;
+	width: 654px;
 	padding: 10px 4px 15px 12px;
+	min-height: 83px;
 }
 .device.narrow {
 	width: 318px;
@@ -84,15 +85,12 @@ h1 {
 	margin-bottom: 5px;
 	text-transform: uppercase;
 }
-.device .label {
+.device .name {
 	float: left;
-	font-size: 200%;
 	font-weight: bold;
 	margin: 0;
 	margin-bottom: 8px;
 	padding: 0;
-}
-.song .device .label {
 	font-size: 150%;
 }
 .settings {
@@ -109,22 +107,19 @@ h1 {
 	margin-right: 10px;
 	background-repeat: no-repeat;
 }
-.settings div.text,
-.settings div.label {
-	font-size: 130%;
-	font-weight: bold;
-	width: auto;
-	height: auto;
-	width: 50px;
-	text-align: center;
-}
-.settings div.label {
-	text-align: left;
+.device .settings > .text {
 	clear: both;
 	width: 80px;
+	text-align: left;
+	min-height: 1em;
 }
-.song .device span.label {
-	font-size: 100%;
+.settings .text {
+	font-size: 130%;
+	font-weight: bold;
+	height: auto;
+	width: 80px;
+	text-align: center;
+	float: left;
 }
 .settings div.spacer {
 	width: 50px;
