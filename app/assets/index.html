@@ -42,7 +42,8 @@
                   <ol class='dials unstyled'>
                     <li class='dial'
                         ng-repeat='setting in device.settings'
-                        ng-controller='DialCtrl'>
+                        ng-controller='DialCtrl'
+                        ng-mousedown='mouseDown()'>
                       <div class='{{setting}}'><span></span></div>
                     </li>
                   </ol>

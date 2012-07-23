@@ -69,7 +69,11 @@ function( $scope, utils ) {
  */
 mod.DialCtrl = [
 '$scope',
-function( $scope ) {}
+function( $scope ) {
+  $scope.mouseDown = function() {
+    console.log('mouseDown', arguments);
+  }
+}
 ];
 
 angular.module('setList.controllers', []).controller(mod)
