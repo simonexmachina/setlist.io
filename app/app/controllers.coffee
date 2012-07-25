@@ -41,12 +41,13 @@ mod.DeviceCtrl = [ "$scope", "utils", ($scope, utils) ->
 mod.DialCtrl = [ "$scope", "$document", ($scope, $document) ->
   $scope.mouseMove = (event) ->
     if $scope.previousPosition > event.screenY
-      if $scope.setting <= 12
+      if $scope.setting < 12
         $scope.setting = $scope.setting + 0.5
     else
-      if $scope.setting >= 0
+      if $scope.setting > 0
         $scope.setting = $scope.setting - 0.5
     $scope.$apply()
+    console.log $scope.setting
     $scope.previousPosition = event.screenY
 
   $scope.mouseDown = ->
