@@ -60,3 +60,5 @@ mod.DialCtrl = [ "$scope", "$document", ($scope, $document) ->
     $document[0].onmouseup = null
 ]
 angular.module("setList.controllers", []).controller mod
+
+
