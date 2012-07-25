@@ -167,6 +167,7 @@ h1 {
 	width: 43px;
 	height: 43px;
 	float: left;
+  -webkit-transform: rotate(40deg);
 }
 .settings .dial div {
 	width: 100%;

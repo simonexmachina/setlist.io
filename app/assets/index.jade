@@ -1,0 +1,40 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    title SetList.io
+    link(rel='stylesheet', href='/css/app.css')
+    script(type='text/javascript', src='http://use.typekit.com/ryn4tie.js')
+    script(type='text/javascript')
+      try{Typekit.load();}catch(e){}
+    body
+      #color-scheme.dark
+        #theme.{{selectedTheme}}
+          #container
+            #controls(ng-controller='SettingsCtrl')
+              label(for='theme-select') Theme:
+              select#theme-select(ng-model='selectedTheme')
+                option(value='{{theme.id}}', ng-repeat='theme in themes', ng-selected='theme.id == selectedTheme') {{theme.name}}
+            .set-list(ng-controller='SetListCtrl')
+              ol.songs.unstyled(ng-repeat='song in songs')
+                div.song(ng-controller='SongCtrl')
+                span.tuning {{song.tuning}}
+                  .title {{song.title}}
+                  ol.devices.unstyled
+                    li.device(class='ng-class:getClasses(device)', ng-repeat='device in song.devices', ng-controller='DeviceCtrl')
+                      .name {{device.name}}
+                      .settings
+                        .text {{device.text}}
+                        ol.dials.unstyled
+                          li.dial(ng-repeat='setting in device.settings', ng-controller='DialCtrl', ng-mousedown='mouseDown()', style='-webkit-transform: rotate({{degrees}}deg);')
+                            div(class='{{setting}}')
+                              span
+
+      script
+        window.brunch = window.brunch || {};
+        window.brunch['auto-reload'] = {
+        enabled: true
+        };
+      script(src='/js/vendor.js')
+      script(src='/js/app.js')
+
