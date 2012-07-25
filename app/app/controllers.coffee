@@ -37,28 +37,25 @@ mod.DeviceCtrl = [ "$scope", "utils", ($scope, utils) ->
   $scope.getClasses = (device) ->
     utils.slugify(device.name) + (if device.settings.length <= 4 then " narrow" else "")
 ]
-mod.DialCtrl = [ "$scope", ($scope) ->
-  $scope.degrees = 0
+
+mod.DialCtrl = [ "$scope", "$document", ($scope, $document) ->
   $scope.mouseMove = (event) ->
-    console.log $scope.previousPosition
-    if $scope.previousPosition > event.clientY
-      $scope.degrees = $scope.degrees + 7
-      console.log $scope.degrees
+    if $scope.previousPosition > event.screenY
+      if $scope.setting <= 12
+        $scope.setting = $scope.setting + 0.5
     else
-      $scope.degrees = $scope.degrees - 7
-      console.log $scope.degrees
+      if $scope.setting >= 0
+        $scope.setting = $scope.setting - 0.5
     $scope.$apply()
-    $scope.previousPosition = event.clientY
+    $scope.previousPosition = event.screenY
 
   $scope.mouseDown = ->
-    $('body').attr('unselectable','on').css('MozUserSelect','none')
-    $(document).mousemove $scope.mouseMove
-    $(document).mouseup $scope.mouseUp
+    document = $document[0]
+    $document[0].onmousemove = $scope.mouseMove
+    $document[0].onmouseup = $scope.mouseUp
 
   $scope.mouseUp = ->
-    $('body').attr('unselectable',null).css('MozUserSelect',null)
-    $(document).unbind "mousemove", $scope.mouseMove  
-    $(document).unbind "mouseup", $scope.mouseUp  
-    #$(document).mouseup null 
+    $document[0].onmousemove = null
+    $document[0].onmouseup = null
 ]
 angular.module("setList.controllers", []).controller mod

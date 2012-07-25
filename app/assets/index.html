@@ -26,7 +26,7 @@
                       <div class="settings">
                         <div class="text">{{device.text}}</div>
                         <ol class="dials unstyled">
-                          <li ng-repeat="setting in device.settings" ng-controller="DialCtrl" ng-mousedown="mouseDown()" style="-webkit-transform: rotate({{degrees}}deg);" class="dial">
+                          <li ng-repeat="setting in device.settings" ng-controller="DialCtrl" ng-mousedown="mouseDown()" style="-webkit-transform: rotate({{(setting * 22.5) - 135}}deg);" class="dial">
                             <div class="{{setting}}"><span></span></div>
                           </li>
                         </ol>

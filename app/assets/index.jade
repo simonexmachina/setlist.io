@@ -26,7 +26,7 @@ html(lang="en")
                       .settings
                         .text {{device.text}}
                         ol.dials.unstyled
-                          li.dial(ng-repeat='setting in device.settings', ng-controller='DialCtrl', ng-mousedown='mouseDown()', style='-webkit-transform: rotate({{degrees}}deg);')
+                          li.dial(ng-repeat='setting in device.settings', ng-controller='DialCtrl', ng-mousedown='mouseDown()', style='-webkit-transform: rotate({{(setting * 22.5) - 135}}deg);')
                             div(class='{{setting}}')
                               span
 
